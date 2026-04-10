@@ -20,7 +20,7 @@ package require -exact qsys 16.1
 # 
 set_module_property DESCRIPTION ""
 set_module_property NAME altera_temp_sense_ctrl
-set_module_property VERSION 1.0
+set_module_property VERSION 1.1
 set_module_property INTERNAL false
 set_module_property OPAQUE_ADDRESS_MAP true
 set_module_property GROUP "Mu3e Control Plane/Modules"
