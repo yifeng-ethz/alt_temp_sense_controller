@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+  <vendor>Mu3e</vendor>
+  <vendorID>MU3E</vendorID>
+  <name>MU3E_ALT_TEMP_SENSE_CTRL</name>
+  <series>MU3E_FPGA_IP</series>
+  <version>1.1</version>
+  <description>CMSIS-SVD description of the altera_temp_sense_ctrl wrapper CSR. BaseAddress is 0 because this file describes the relative CSR aperture of the IP; system integration supplies the live slave base address.</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <access>read-write</access>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+  <peripherals>
+    <peripheral>
+      <name>ALTERA_TEMP_SENSE_CTRL_CSR</name>
+      <description>Single-word control/status aperture for the Arria-V temperature-sense wrapper.</description>
+      <groupName>MU3E_TEMP_SENSE</groupName>
+      <baseAddress>0x0</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x4</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>CSR</name>
+          <description>Shared control/status word for the Arria-V on-die temperature sensor wrapper. Reads return the signed 8-bit temperature sample in bits [7:0]. Writes use bit 0 to enable or disable periodic sampling; other bits are ignored.</description>
+          <addressOffset>0x00</addressOffset>
+          <access>read-write</access>
+          <fields>
+            <field>
+              <name>temperature_signed</name>
+              <description>Readback-only signed 8-bit Arria-V temperature code.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>reserved</name>
+              <description>Reserved, read as zero and ignored on write.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>24</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>
